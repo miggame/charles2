@@ -1,0 +1,549 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "start",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.3333333333333333,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "spTitle": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "btnDownLayout": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "btnCenterLayout/btnCollection": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "btnCenterLayout/btnUpgrade": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "btnCenterLayout/spHero": {
+        "props": {
+          "scale": [
+            {
+              "frame": 0,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 1,
+                "y": 1
+              }
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 0,
+                "y": 0
+              }
+            }
+          ]
+        }
+      },
+      "btnGo": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 0
+            }
+          ]
+        },
+        "comps": {
+          "cc.Button": {
+            "enabled": [
+              {
+                "frame": 0.16666666666666666,
+                "value": false
+              }
+            ]
+          }
+        }
+      },
+      "stageLayout": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot0": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.21666666666666667,
+              "value": 0
+            }
+          ],
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                -360,
+                0
+              ]
+            },
+            {
+              "frame": 0.06666666666666667,
+              "value": [
+                -40,
+                0
+              ]
+            },
+            {
+              "frame": 0.23333333333333334,
+              "value": [
+                -40,
+                800
+              ]
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot1": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                -280,
+                0
+              ]
+            },
+            {
+              "frame": 0.05,
+              "value": [
+                -40,
+                0
+              ]
+            },
+            {
+              "frame": 0.21666666666666667,
+              "value": [
+                -40,
+                800
+              ]
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.21666666666666667,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot2": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.2,
+              "value": 0
+            }
+          ],
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                -200,
+                0
+              ]
+            },
+            {
+              "frame": 0.03333333333333333,
+              "value": [
+                -40,
+                0
+              ]
+            },
+            {
+              "frame": 0.2,
+              "value": [
+                -40,
+                800
+              ]
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot3": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                -120,
+                0
+              ]
+            },
+            {
+              "frame": 0.016666666666666666,
+              "value": [
+                -40,
+                0
+              ]
+            },
+            {
+              "frame": 0.18333333333333332,
+              "value": [
+                -40,
+                800
+              ]
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.18333333333333332,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot4": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                -40,
+                0
+              ]
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": [
+                -40,
+                800
+              ]
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot5": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                40,
+                0
+              ]
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": [
+                40,
+                800.1
+              ]
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot6": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                120,
+                0
+              ]
+            },
+            {
+              "frame": 0.016666666666666666,
+              "value": [
+                40,
+                0
+              ]
+            },
+            {
+              "frame": 0.18333333333333332,
+              "value": [
+                40,
+                800
+              ]
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.18333333333333332,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot7": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                200,
+                0
+              ]
+            },
+            {
+              "frame": 0.03333333333333333,
+              "value": [
+                40.6,
+                0
+              ]
+            },
+            {
+              "frame": 0.2,
+              "value": [
+                40.6,
+                800
+              ]
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.2,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot8": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                280,
+                0
+              ]
+            },
+            {
+              "frame": 0.05,
+              "value": [
+                40,
+                0
+              ]
+            },
+            {
+              "frame": 0.21666666666666667,
+              "value": [
+                40,
+                800
+              ]
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.21666666666666667,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot9": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                360,
+                0
+              ]
+            },
+            {
+              "frame": 0.06666666666666667,
+              "value": [
+                40,
+                0
+              ]
+            },
+            {
+              "frame": 0.23333333333333334,
+              "value": [
+                40,
+                800
+              ]
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0,
+              "value": 255
+            },
+            {
+              "frame": 0.21666666666666667,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "doorLayoutUp/doorLeft": {
+        "props": {
+          "x": [
+            {
+              "frame": 0,
+              "value": -58.5
+            },
+            {
+              "frame": 0.08333333333333333,
+              "value": -160
+            },
+            {
+              "frame": 0.23333333333333334,
+              "value": -160
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": -58.5
+            }
+          ]
+        }
+      },
+      "doorLayoutUp/doorRight": {
+        "props": {
+          "x": [
+            {
+              "frame": 0,
+              "value": 58.5
+            },
+            {
+              "frame": 0.08333333333333333,
+              "value": 160
+            },
+            {
+              "frame": 0.23333333333333334,
+              "value": 160
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": 58.5
+            }
+          ]
+        }
+      },
+      "btnCenterLayout/spHeroSmall": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.16666666666666666,
+              "value": 0
+            },
+            {
+              "frame": 0.25,
+              "value": 1000
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": 2000
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

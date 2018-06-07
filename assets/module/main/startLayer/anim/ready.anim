@@ -1,0 +1,425 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "ready",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.82,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "doorLayoutDown/doorLeft": {
+        "props": {
+          "x": [
+            {
+              "frame": 0,
+              "value": -58.5
+            },
+            {
+              "frame": 0.25,
+              "value": -160
+            },
+            {
+              "frame": 0.5,
+              "value": -58.5
+            }
+          ]
+        }
+      },
+      "doorLayoutDown/doorRight": {
+        "props": {
+          "x": [
+            {
+              "frame": 0,
+              "value": 58.5
+            },
+            {
+              "frame": 0.25,
+              "value": 160.1
+            },
+            {
+              "frame": 0.5,
+              "value": 58.5
+            }
+          ]
+        }
+      },
+      "btnCenterLayout/spHeroSmall": {
+        "props": {
+          "y": [
+            {
+              "frame": 0,
+              "value": -1317,
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.5,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "btnDownLayout": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.5,
+              "value": -1233,
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": -641
+            }
+          ]
+        }
+      },
+      "btnCenterLayout/spHero": {
+        "props": {
+          "scale": [
+            {
+              "frame": 0.5,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 0,
+                "y": 0
+              }
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": {
+                "__type__": "cc.Vec2",
+                "x": 1,
+                "y": 1
+              }
+            }
+          ]
+        }
+      },
+      "btnGo": {
+        "props": {
+          "x": [
+            {
+              "frame": 0.5,
+              "value": -972,
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": 0.3
+            }
+          ]
+        }
+      },
+      "btnCenterLayout/btnCollection": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0.5,
+              "value": 0
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": 255
+            }
+          ]
+        }
+      },
+      "btnCenterLayout/btnUpgrade": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0.5,
+              "value": 0
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": 255
+            }
+          ]
+        }
+      },
+      "spTitle": {
+        "props": {
+          "y": [
+            {
+              "frame": 0,
+              "value": 1507,
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.5,
+              "value": 627
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot1": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.5166666666666667,
+              "value": -125,
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.6833333333333333,
+              "value": 0
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.5166666666666667,
+              "value": 0
+            },
+            {
+              "frame": 0.6833333333333333,
+              "value": 255
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot0": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0.5,
+              "value": 0
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": 255
+            }
+          ],
+          "y": [
+            {
+              "frame": 0.5,
+              "value": -125,
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot2": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.5333333333333333,
+              "value": -125,
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.7,
+              "value": 0
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.5333333333333333,
+              "value": 0
+            },
+            {
+              "frame": 0.7,
+              "value": 255
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot3": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.55,
+              "value": -125,
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.7166666666666667,
+              "value": 0
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.55,
+              "value": 0
+            },
+            {
+              "frame": 0.7166666666666667,
+              "value": 255
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot4": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.5666666666666667,
+              "value": -125,
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.7333333333333333,
+              "value": 0
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.5666666666666667,
+              "value": 0
+            },
+            {
+              "frame": 0.7333333333333333,
+              "value": 255
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot5": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.5833333333333334,
+              "value": -125,
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.75,
+              "value": 0
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.5833333333333334,
+              "value": 0
+            },
+            {
+              "frame": 0.75,
+              "value": 255
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot6": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.6,
+              "value": -125,
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.7666666666666667,
+              "value": 0
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.6,
+              "value": 0
+            },
+            {
+              "frame": 0.7666666666666667,
+              "value": 255
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot7": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.6166666666666667,
+              "value": -125,
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.7833333333333333,
+              "value": 0
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.6166666666666667,
+              "value": 0
+            },
+            {
+              "frame": 0.7833333333333333,
+              "value": 255
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot8": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.6333333333333333,
+              "value": -125,
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.8,
+              "value": 0
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.6333333333333333,
+              "value": 0
+            },
+            {
+              "frame": 0.8,
+              "value": 255
+            }
+          ]
+        }
+      },
+      "enemyLayout/enemyDot9": {
+        "props": {
+          "y": [
+            {
+              "frame": 0.65,
+              "value": -125,
+              "curve": "cubicInOut"
+            },
+            {
+              "frame": 0.8166666666666667,
+              "value": 0
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.65,
+              "value": 0
+            },
+            {
+              "frame": 0.8166666666666667,
+              "value": 255
+            }
+          ]
+        }
+      },
+      "stageLayout": {
+        "props": {
+          "opacity": [
+            {
+              "frame": 0.5,
+              "value": 0
+            },
+            {
+              "frame": 0.6666666666666666,
+              "value": 255
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}
