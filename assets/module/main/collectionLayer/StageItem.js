@@ -40,7 +40,7 @@ cc.Class({
         cc.loader.loadRes(path, cc.SpriteFrame, function (err, spriteFrame) {
             this.maskNode.getComponent(cc.Mask).spriteFrame = spriteFrame;
         }.bind(this));
-        if (GameData.curStage > stage) {
+        if (GameData.maxStage >= stage) {
             this.spBoss.node.active = true;
             ImageUtil.setImg(this.spBoss, path);
         }

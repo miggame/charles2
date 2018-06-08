@@ -1,4 +1,5 @@
 module.exports = {
     totalStage: 51,
-    curStage: 6
+    maxStage: 5,
+    selectedStage: 1
 };
