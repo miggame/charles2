@@ -34,6 +34,7 @@ cc.Class({
         lblBoosterLevel: { displayName: 'lblBoosterLevel', default: null, type: cc.Label },
         heroItemNode: { displayName: 'heroItemNode', default: null, type: cc.Node },
         heroItemPre: { displayName: 'heroItemPre', default: null, type: cc.Prefab },
+        lblGold: { displayName: 'lblGold', default: null, type: cc.Label },
 
         heroSmallNode: { displayName: 'heroSmallNode', default: null, type: cc.Node },
         heroNode: { displayName: 'heroNode', default: null, type: cc.Node },
@@ -41,14 +42,19 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
     _getMsgList() {
-        return [];
+        return [
+            GameLocalMsg.UpdatePlayerGold
+        ];
     },
 
     _onMsg(msg, data) {
-
+        if (msg === GameLocalMsg.UpdatePlayerGold) {
+            this.lblGold.string = data;
+        }
     },
     onLoad() {
         this._initMsg();
+        GameData.initGameDataEvent();
         this._height = cc.view.getVisibleSize().height;
         this._width = cc.view.getVisibleSize().width;
         this._initView();
@@ -148,6 +154,7 @@ cc.Class({
     },
 
     onBtnClickToUpgrade() {
+        this.lblGold.string = GameData.gold;
         this._showCharacter();
         let moveAct = cc.moveBy(0.5, cc.p(-this._width, 0));
         this.startLayer.runAction(moveAct);
@@ -219,7 +226,6 @@ cc.Class({
             this.lblHeadLevel.string = "LV." + headLevel + "->LV." + parseInt(headLevel + 1);
         }
         this.lblHeadCost.string = headCost;
-
     },
 
     _refreshBody() {
@@ -262,9 +268,17 @@ cc.Class({
                 if (headLV === headMaxLV) {
                     return;
                 }
-                headLV++;
-                PropConfig.setCharacterCfg('headLV', headLV);
+                if (headLV < PropConfig.character[1].headMaxLV) {
+                    headLV++;
+                }
+
                 let headCost = parseInt(5000 * (headLV + 1));
+                let headLeftGold = GameData.gold - PropConfig.character[1].headCost;
+                if (headLeftGold < 0) {
+                    return;
+                }
+                ObserverMgr.dispatchMsg(GameLocalMsg.UpdatePlayerGold, headLeftGold);
+                PropConfig.setCharacterCfg('headLV', headLV);
                 PropConfig.setCharacterCfg('headCost', headCost);
                 this._refreshHead();
                 ObserverMgr.dispatchMsg(HeroItemModule.Msg.UpgradeHead, PropConfig.character[1]);
@@ -275,9 +289,16 @@ cc.Class({
                 if (bodyLV === bodyMaxLV) {
                     return;
                 }
-                bodyLV++;
-                PropConfig.setCharacterCfg('bodyLV', bodyLV);
+                if (bodyLV < PropConfig.character[1].bodyMaxLV) {
+                    bodyLV++;
+                }
                 let bodyCost = parseInt(5000 * (bodyLV + 1));
+                let bodyLeftGold = GameData.gold - PropConfig.character[1].bodyCost;
+                if (bodyLeftGold < 0) {
+                    return;
+                }
+                ObserverMgr.dispatchMsg(GameLocalMsg.UpdatePlayerGold, bodyLeftGold);
+                PropConfig.setCharacterCfg('bodyLV', bodyLV);
                 PropConfig.setCharacterCfg('bodyCost', bodyCost);
                 this._refreshBody();
                 ObserverMgr.dispatchMsg(HeroItemModule.Msg.UpgradeBody, PropConfig.character[1]);
@@ -289,9 +310,16 @@ cc.Class({
                 if (boosterLV === boosterMaxLV) {
                     return;
                 }
-                boosterLV++;
-                PropConfig.setCharacterCfg('boosterLV', boosterLV);
+                if (boosterLV < PropConfig.character[1].boosterMaxLV) {
+                    boosterLV++;
+                }
                 let boosterCost = parseInt(5000 * (boosterLV + 1));
+                let boosterLeftGold = GameData.gold - PropConfig.character[1].boosterCost;
+                if (boosterLeftGold < 0) {
+                    return;
+                }
+                ObserverMgr.dispatchMsg(GameLocalMsg.UpdatePlayerGold, boosterLeftGold);
+                PropConfig.setCharacterCfg('boosterLV', boosterLV);
                 PropConfig.setCharacterCfg('boosterCost', boosterCost);
                 this._refreshBooster();
                 ObserverMgr.dispatchMsg(HeroItemModule.Msg.UpgradeBooster, PropConfig.character[1]);
