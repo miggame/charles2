@@ -72,3 +72,5 @@ quick_gen_project_*_autogen.sh.meta
 settings/project.json
 creator.d.ts
 packages/
+/plugin-resource
+/excel
