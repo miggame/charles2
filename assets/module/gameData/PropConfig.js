@@ -151,14 +151,39 @@ module.exports = {
             value2: 0,
             cost: 5e3,
             level: 0
-        },
-        c: {
-            skill1: "c",
-            value1: "c",
-            skill2: "c",
-            value2: "c",
-            cost: "c ",
-            level: "c"
         }
+    },
+    character: {
+        1: {
+            headLV: 0,
+            headCost: 5e3,
+            headMaxLV: 5,
+            bodyLV: 0,
+            bodyCost: 5e3,
+            bodyMaxLV: 6,
+            boosterLV: 0,
+            boosterCost: 5e3,
+            boosterMaxLV: 5
+        }
+    },
+
+    setCharacterCfg(key, value) {
+        this.character[1][key] = value;
+    },
+
+    resetCharacterCfg() {
+        //head
+        this.character[1].headLV = 0;
+        this.character[1].headCost = 5000;
+        this.character[1].headMaxLV = 5;
+        //body
+        this.character[1].bodyLV = 0;
+        this.character[1].bodyCost = 5000;
+        this.character[1].bodyMaxLV = 6;
+        //booster
+        this.character[1].boosterLV = 0;
+        this.character[1].boosterCost = 5000;
+        this.character[1].boosterMaxLV = 5;
+
     }
 };

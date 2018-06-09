@@ -63,8 +63,8 @@
     "_scaleY": 1,
     "_position": {
       "__type__": "cc.Vec2",
-      "x": -257,
-      "y": 175
+      "x": 0,
+      "y": 0
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -121,7 +121,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": -104.5
+      "y": -110.5
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -170,7 +170,7 @@
     "_left": 0,
     "_right": 0,
     "_top": 0,
-    "_bottom": 10,
+    "_bottom": 4,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
     "_isAbsLeft": true,
@@ -332,7 +332,7 @@
     "_position": {
       "__type__": "cc.Vec2",
       "x": 0,
-      "y": 72.5
+      "y": 72
     },
     "_skewX": 0,
     "_skewY": 0,
@@ -380,7 +380,7 @@
     "_alignFlags": 1,
     "_left": 0,
     "_right": 0,
-    "_top": 0,
+    "_top": 0.5,
     "_bottom": 0,
     "_verticalCenter": 0,
     "_horizontalCenter": 0,
@@ -531,7 +531,16 @@
     "node": {
       "__id__": 1
     },
-    "_enabled": true
+    "_enabled": true,
+    "spBooster": {
+      "__id__": 3
+    },
+    "spHead": {
+      "__id__": 10
+    },
+    "spBody": {
+      "__id__": 14
+    }
   },
   {
     "__type__": "cc.PrefabInfo",
