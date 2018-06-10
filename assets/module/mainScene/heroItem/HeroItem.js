@@ -1,6 +1,8 @@
 let Observer = require('Observer');
 let ImageUtil = require('ImageUtil');
 let HeroItemModule = require('HeroItemModule');
+let PropConfig = require('PropConfig');
+
 cc.Class({
     extends: Observer,
 
@@ -31,6 +33,8 @@ cc.Class({
     },
     onLoad() {
         this._initMsg();
+        let characterData = PropConfig.character[1];
+        this.init(characterData);
     },
 
     start() {

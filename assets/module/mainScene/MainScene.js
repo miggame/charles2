@@ -36,11 +36,9 @@ cc.Class({
         heroItemPre: { displayName: 'heroItemPre', default: null, type: cc.Prefab },
         lblGold: { displayName: 'lblGold', default: null, type: cc.Label },
 
-        heroSmallNode: { displayName: 'heroSmallNode', default: null, type: cc.Node },
-        heroNode: { displayName: 'heroNode', default: null, type: cc.Node },
-
         stageLayer: { displayName: 'stageLayer', default: null, type: cc.Node },
         stagePre: { displayName: 'stagePre', default: null, type: cc.Prefab },
+        enemyItemPre: { displayName: 'enemyItemPre', default: null, type: cc.Prefab },
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -55,12 +53,14 @@ cc.Class({
         if (msg === GameLocalMsg.UpdatePlayerGold) {
             this.lblGold.string = data;
         } else if (msg === GameLocalMsg.GoStage) {
+            cc.log('<<<');
             this.stageLayer.destroyAllChildren();
             let stageNode = cc.instantiate(this.stagePre);
             this.stageLayer.addChild(stageNode);
             stageNode.y = this._height;
             this._moveDown(this.stageLayer);
             this._moveDown(this.startLayer);
+            stageNode.getComponent('Stage').init(GameData.selectedStage);
         }
     },
     onLoad() {
@@ -81,26 +81,26 @@ cc.Class({
         this.collectionLayer.x = this._width;
         this.upgradeLayer.x = this._width;
         this._initStage();
-        this._initSmallHero();
-        this._initHero();
+        // this._initSmallHero();
+        // this._initHero();
     },
 
-    _initSmallHero() {
-        this.heroSmallNode.destroyAllChildren();
-        let characterData = PropConfig.character[1];
-        let smallHero = cc.instantiate(this.heroItemPre);
-        this.heroSmallNode.addChild(smallHero);
-        smallHero.scale = 0.2;
-        smallHero.getComponent('HeroItem').init(characterData);
-    },
+    // _initSmallHero() {
+    //     this.heroSmallNode.destroyAllChildren();
+    //     let characterData = PropConfig.character[1];
+    //     let smallHero = cc.instantiate(this.heroItemPre);
+    //     this.heroSmallNode.addChild(smallHero);
+    //     smallHero.scale = 0.2;
+    //     smallHero.getComponent('HeroItem').init(characterData);
+    // },
 
-    _initHero() {
-        this.heroNode.destroyAllChildren();
-        let characterData = PropConfig.character[1];
-        let hero = cc.instantiate(this.heroItemPre);
-        this.heroNode.addChild(hero);
-        hero.getComponent('HeroItem').init(characterData);
-    },
+    // _initHero() {
+    //     this.heroNode.destroyAllChildren();
+    //     let characterData = PropConfig.character[1];
+    //     let hero = cc.instantiate(this.heroItemPre);
+    //     this.heroNode.addChild(hero);
+    //     hero.getComponent('HeroItem').init(characterData);
+    // },
 
     _initStage() {
         if (GameData.maxStage === 0) {
