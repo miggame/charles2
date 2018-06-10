@@ -38,18 +38,29 @@ cc.Class({
 
         heroSmallNode: { displayName: 'heroSmallNode', default: null, type: cc.Node },
         heroNode: { displayName: 'heroNode', default: null, type: cc.Node },
+
+        stageLayer: { displayName: 'stageLayer', default: null, type: cc.Node },
+        stagePre: { displayName: 'stagePre', default: null, type: cc.Prefab },
     },
 
     // LIFE-CYCLE CALLBACKS:
     _getMsgList() {
         return [
-            GameLocalMsg.UpdatePlayerGold
+            GameLocalMsg.UpdatePlayerGold,
+            GameLocalMsg.GoStage
         ];
     },
 
     _onMsg(msg, data) {
         if (msg === GameLocalMsg.UpdatePlayerGold) {
             this.lblGold.string = data;
+        } else if (msg === GameLocalMsg.GoStage) {
+            this.stageLayer.destroyAllChildren();
+            let stageNode = cc.instantiate(this.stagePre);
+            this.stageLayer.addChild(stageNode);
+            stageNode.y = this._height;
+            this._moveDown(this.stageLayer);
+            this._moveDown(this.startLayer);
         }
     },
     onLoad() {
@@ -116,6 +127,7 @@ cc.Class({
 
     onBtnClickToStart() {
         this.startLayer.getComponent(cc.Animation).play('start');
+        // cc.director.loadScene('GameScene');
     },
 
     onBtnClickToStageSelect(e) {
@@ -327,6 +339,11 @@ cc.Class({
             default:
                 break;
         }
+    },
+
+    _moveDown(node) {
+        let moveDownAct = cc.moveBy(1, cc.p(0, -this._height));
+        node.runAction(moveDownAct);
     }
 
 });
