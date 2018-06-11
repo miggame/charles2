@@ -74,3 +74,5 @@ creator.d.ts
 packages/
 /excel
 /plugin-resource
+/assets/test
+/assets/test.meta
