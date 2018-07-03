@@ -45,7 +45,10 @@ cc.Class({
     _getMsgList() {
         return [
             GameLocalMsg.UpdatePlayerGold,
-            GameLocalMsg.GoStage
+            GameLocalMsg.GoStage,
+            GameLocalMsg.GameOver,
+            GameLocalMsg.GameRestart,
+            GameLocalMsg.UpgradePlayer
         ];
     },
 
@@ -61,6 +64,18 @@ cc.Class({
             this._moveDown(this.stageLayer);
             this._moveDown(this.startLayer);
             stageNode.getComponent('Stage').init(GameData.selectedStage);
+        } else if (msg === GameLocalMsg.GameOver) {
+            console.log('游戏结束');
+        } else if (msg === GameLocalMsg.GameRestart) {
+            this.stageLayer.destroyAllChildren();
+            let stageNode = cc.instantiate(this.stagePre);
+            this.stageLayer.addChild(stageNode);
+            stageNode.y = this._height;
+            // this._moveDown(this.stageLayer);
+            // this._moveDown(this.startLayer);
+            stageNode.getComponent('Stage').init(GameData.selectedStage);
+        } else if (msg === GameLocalMsg.UpgradePlayer) {
+            this.onBtnClickToUpgrade();
         }
     },
     onLoad() {

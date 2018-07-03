@@ -9,19 +9,37 @@ cc.Class({
         touchLayer: { displayName: 'touchLayer', default: null, type: cc.Node },
         enemyLayer: { displayName: 'enemyLayer', default: null, type: cc.Node },
         enemyItemPre: { displayName: 'enemyItemPre', default: null, type: cc.Prefab },
+        overLayer: { displayName: 'overLayer', default: null, type: cc.Node },
         _prePos: null
     },
 
     // LIFE-CYCLE CALLBACKS:
     _getMsgList() {
-        return ["TarP"];
+        return [
+            "TarP",
+            GameLocalMsg.GameOver
+        ];
     },
 
     _onMsg(msg, data) {
+        if (msg === GameLocalMsg.GameOver) {
+            this.heroNode.active = false;
+            this.unschedule(this._initEnemy, this);
+            this.touchLayer.off('touchstart', this._startCallBack, this);
+            this.touchLayer.off('touchmove', this._moveCallBack, this);
+            this.touchLayer.off('touchend', function (event) {
 
+            }, this);
+            this.touchLayer.off('touchcancel', function (event) {
+
+            }, this);
+
+            this._showOver();
+        }
     },
     onLoad() {
         this._initMsg();
+        this._hideOver();
     },
 
     start() {
@@ -37,23 +55,26 @@ cc.Class({
 
     initTouchListener() {//动画播放完毕调用此方法
 
-        this.touchLayer.on('touchstart', function (event) {
-            this._prePos = event.getLocation();
-            return true;
-        }, this);
-        this.touchLayer.on('touchmove', function (event) {
-            this._refreshTargetPos();
-            this.heroNode.position = cc.pAdd(this.heroNode.position, event.getDelta());
-            this._refreshHeroRotation(this._prePos, event.getLocation());
-            this._limitHeroBorder();
-        }, this);
+        // this.touchLayer.on('touchstart', function (event) {
+        //     this._prePos = event.getLocation();
+        //     return true;
+        // }, this);
+        // this.touchLayer.on('touchmove', function (event) {
+        //     this._refreshTargetPos();
+        //     this.heroNode.position = cc.pAdd(this.heroNode.position, event.getDelta());
+        //     this._refreshHeroRotation(this._prePos, event.getLocation());
+        //     this._limitHeroBorder();
+        // }, this);
+        this.touchLayer.on('touchstart', this._startCallBack, this);
+        this.touchLayer.on('touchmove', this._moveCallBack, this);
         this.touchLayer.on('touchend', function (event) {
         }, this);
         this.touchLayer.on('touchcancel', function (event) {
 
         }, this);
 
-        this.schedule(this._initEnemy, 1, 6, 0);
+        // this.schedule(this._initEnemy, 1, 6, 0);
+        this.schedule(this._initEnemy, 0.5);
     },
 
     _initEnemy() {
@@ -89,7 +110,7 @@ cc.Class({
             let normalDiff = cc.pNormalize(diff);
             let radian = cc.pAngle(normalDiff, cc.p(0, 1));
             let degree = 180 / Math.PI * radian;
-            console.log('degree: ', degree);
+
             if (normalDiff.x < 0) {
                 this.heroNode.rotation = -degree;
             } else {
@@ -101,4 +122,35 @@ cc.Class({
     _refreshTargetPos() {
         ObserverMgr.dispatchMsg('TarP', this.heroNode.position);
     },
+
+    _startCallBack(event) {
+        this._prePos = event.getLocation();
+        return true;
+    },
+    _moveCallBack(event) {
+        this._refreshTargetPos();
+        this.heroNode.position = cc.pAdd(this.heroNode.position, event.getDelta());
+        this._refreshHeroRotation(this._prePos, event.getLocation());
+        this._limitHeroBorder();
+    },
+
+    _hideOver() {
+        this.overLayer.active = false;
+    },
+    _showOver() {
+        this.overLayer.active = true;
+        this.node.getComponent(cc.Animation).play('over');
+    },
+
+    onBtnClickToRestart() {
+        ObserverMgr.dispatchMsg(GameLocalMsg.GameRestart, null);
+    },
+
+    onBtnClickToMainScene() {
+        cc.director.loadScene('MainScene');
+    },
+
+    onBtnClickToUpgrade() {
+        ObserverMgr.dispatchMsg(GameLocalMsg.UpgradePlayer, null);
+    }
 });
